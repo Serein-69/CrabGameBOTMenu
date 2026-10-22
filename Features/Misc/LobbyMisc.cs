@@ -155,9 +155,16 @@ namespace BOTMenuMod
         [HarmonyPostfix]
         public static void Postfix_MenuStart()
         {
-            if (!_initialized)
+            try
             {
-                InitializeServerList();
+                if (!_initialized)
+                {
+                    InitializeServerList();
+                }
+            }
+            catch (System.Exception e)
+            {
+                Utility.Log("[ServerList] init failed: " + e.Message);
             }
         }
 
@@ -312,11 +319,35 @@ namespace BOTMenuMod
         [HarmonyPrefix]
         public static void Prefix_JoinLobby()
         {
-            if (SteamManager.Instance != null && SteamManager.Instance.currentLobby != (CSteamID)0UL)
+            try
             {
-                SteamManager.Instance.LeaveLobby();
-                if (_serverListObj != null) _serverListObj.SetActive(false);
+                if (SteamManager.Instance != null && SteamManager.Instance.currentLobby != (CSteamID)0UL)
+                {
+                    SteamManager.Instance.LeaveLobby();
+                    if (_serverListObj != null) _serverListObj.SetActive(false);
+                }
             }
+            catch (System.Exception e)
+            {
+                Utility.Log("[JoinLobby] pre-leave failed: " + e.Message);
+            }
+        }
+
+        private static bool _joinLobbyErrorLogged = false;
+
+        [HarmonyPatch(typeof(SteamManager), "JoinLobby")]
+        [HarmonyFinalizer]
+        public static System.Exception Finalizer_JoinLobby(System.Exception __exception)
+        {
+            if (__exception == null) return null;
+
+            if (!_joinLobbyErrorLogged)
+            {
+                _joinLobbyErrorLogged = true;
+                Utility.Log("[JoinLobby] suppressed game lobby-ui exception: " + __exception.GetType().Name + ": " + __exception.Message);
+            }
+
+            return null;
         }
     }
 
