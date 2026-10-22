@@ -325,7 +325,7 @@ namespace BOTMenuMod
                 SpectatorPOVManager.isFirstPerson = false;
             }
 
-            [HarmonyPatch(typeof(CamBob), "Update")]
+            [HarmonyPatch(typeof(CamBob), "LateUpdate")]
             [HarmonyPrefix]
             public static bool UpdatePrefix(CamBob __instance)
             {

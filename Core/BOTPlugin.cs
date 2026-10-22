@@ -553,17 +553,29 @@ namespace BOTMenuMod
             }
         }
 
+        private static void PatchType(System.Type type)
+        {
+            try
+            {
+                Harmony.CreateAndPatchAll(type);
+            }
+            catch (System.Exception e)
+            {
+                Utility.Log("[Patch] " + type.Name + " failed: " + e.Message);
+            }
+        }
+
         private void ApplyHarmonyPatches()
         {
-            Harmony.CreateAndPatchAll(typeof(BOTPlugin));
-            Harmony.CreateAndPatchAll(typeof(ShadowModePatches));
-            Harmony.CreateAndPatchAll(typeof(CrosshairManager));
-            Harmony.CreateAndPatchAll(typeof(JumpVisualPatch));
-            Harmony.CreateAndPatchAll(typeof(TagModePatches));
-            Harmony.CreateAndPatchAll(typeof(CustomServerListManager.SetUIPatch));
-            Harmony.CreateAndPatchAll(typeof(SpectatorPOVManager.CamBobPatch));
-            Harmony.CreateAndPatchAll(typeof(FakeBoxPatches));
-            Harmony.CreateAndPatchAll(typeof(ChatFontPatch));
+            PatchType(typeof(BOTPlugin));
+            PatchType(typeof(ShadowModePatches));
+            PatchType(typeof(CrosshairManager));
+            PatchType(typeof(JumpVisualPatch));
+            PatchType(typeof(TagModePatches));
+            PatchType(typeof(CustomServerListManager.SetUIPatch));
+            PatchType(typeof(SpectatorPOVManager.CamBobPatch));
+            PatchType(typeof(FakeBoxPatches));
+            PatchType(typeof(ChatFontPatch));
         }
 
         public static void SyncConfigsToMemory()
