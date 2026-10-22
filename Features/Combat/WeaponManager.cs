@@ -116,6 +116,7 @@ namespace BOTMenuMod
     public static class SuperKnockbackManager
     {
         private static bool _isCustomSending = false;
+        private static bool _snowballErrorLogged = false;
 
         public static void Init()
         {
@@ -227,6 +228,21 @@ namespace BOTMenuMod
                 }
             }
             catch { }
+        }
+
+        [HarmonyPatch(typeof(ThrownSnowball), "OnCollisionEnter")]
+        [HarmonyFinalizer]
+        public static System.Exception Finalizer_SnowballHit(System.Exception __exception)
+        {
+            if (__exception == null) return null;
+
+            if (!_snowballErrorLogged)
+            {
+                _snowballErrorLogged = true;
+                Utility.Log("[Snowball] suppressed game collision exception: " + __exception.GetType().Name + ": " + __exception.Message);
+            }
+
+            return null;
         }
     }
 }
