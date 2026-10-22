@@ -1,0 +1,59 @@
+BOT Menu License
+Version 1.0
+
+Copyright (c) 2026 The BOT Menu Authors
+
+
+Anyone who receives a copy of this software and of its source code ("the
+software") may do whatever they like with it. Run it, read it, learn from it,
+copy it, change it, take it apart, glue it into another project, publish it,
+or give it away. No permission is needed beforehand and nothing is owed
+afterwards.
+
+In exchange, a few simple things are expected. Keep the copyright line above
+and this file with every copy you pass on, whether you ship source or a
+compiled build. Do not claim that you wrote the original, and do not give the
+impression that its authors built, endorsed or are responsible for your
+version, your fork, your server or the people on it. If you modify the code
+before passing it on, make it obvious that it was modified, so that mistakes in
+your build are not pinned on the original. The files in the lib folder are a
+different matter: they belong to their own authors, arrive under their own
+licenses, and are untouched by this one. Nothing written here grants you any
+right over them that their licenses do not already grant.
+
+The software is provided as is, in the state you found it.
+
+
+NO WARRANTY. THE SOFTWARE COMES WITH NO WARRANTY OF ANY KIND, EXPRESS,
+IMPLIED OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY WARRANTY OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT.
+NOTHING HERE PROMISES THAT THE SOFTWARE WILL WORK, THAT IT WILL KEEP WORKING,
+THAT IT WILL KEEP UP WITH FUTURE GAME PATCHES, OR THAT USING IT WILL NOT COST
+YOU SOMETHING. YOU DECIDE WHETHER TO USE IT, AND YOU DO SO AT YOUR OWN RISK.
+
+
+NO LIABILITY. TO THE FULLEST EXTENT THE LAW ALLOWS, THE AUTHORS AND
+CONTRIBUTORS OF THE SOFTWARE ACCEPT NO RESPONSIBILITY FOR ANY LOSS OR DAMAGE
+THAT FOLLOWS FROM IT OR FROM ITS USE, WHETHER THE CLAIM RESTS ON CONTRACT,
+NEGLIGENCE, STRICT LIABILITY OR ANYTHING ELSE. THAT INCLUDES LOST DATA,
+CORRUPTED SAVES, CRASHES, DAMAGED HARDWARE, MISSED PROFITS, WARNINGS,
+SUSPENSIONS, BANS AND PENALTIES HANDED OUT BY A GAME, A SERVER OR A PLATFORM,
+AND ANY OTHER DIRECT OR INDIRECT LOSS.
+
+
+A plain warning, since it matters here. This software alters the behaviour of
+somebody else's game. Its authors have no connection to that game's developers
+or publishers, enjoy no approval from them, and receive nothing from them.
+Modding a game can break its terms of service and can get an account warned,
+suspended or banned, either by the developers or by whoever runs the server you
+are on. Whoever chooses to run the software carries that outcome alone, and its
+authors will not take it on, soften it, or help anyone dodge it.
+
+
+There is also no promise of help. Nobody is obliged to update this, fix what is
+broken, answer questions, keep any online endpoint alive, or keep anything at
+all available. If a network feature stops being configured or disappears
+entirely, that is within the terms written here.
+
+
+END OF LICENSE
